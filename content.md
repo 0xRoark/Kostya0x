@@ -24,7 +24,7 @@ Helping protocols and startups turn complex mechanics into intuitive user experi
 Product Designer for [crypto]
 
 **Body:**
-Helping protocols and startups turn complex mechanics into intuitive user experiences. Blend pixels, words and growth hacks to make magic internet money exciting. Love cracking complex problems. Sophisticated crypto intern since 2020.
+Helping protocols and startups turn complex mechanics into intuitive user experiences. Blend pixels, words and growth hacks to make magic internet money exciting. Cracking complexity with curiosity. Sophisticated crypto intern since 2020.
 
 ### Contact / Links
 
@@ -106,15 +106,17 @@ About
 
 ### Bio
 
-Senior product designer specializing in crypto and DeFi. Known on X as @roark_0x. Focused on building products that people genuinely want to use repeatedly.
+I'm Kostya. Some of you might know me as @roark_0x on X. I’m a senior product designer who works closely with crypto founders and DeFi teams. Love building things people genuinely want to try, and return to after that very first touch.
 
 ### Constraints
 
-I frame personal development around the concept of "constraints" — deep influences shaping communication, objectives, and decision-making. My primary constraint is curiosity. Over time it evolved into a work style built on systematic thinking, responsibility, and experimentation.
+There are things that quietly shape you as a person – I call them constraints. They sit deep in your mind and influence how you communicate, how you choose objectives, and how you make decisions. A framework behind every product you ship.
+
+For me, the core constraint has always been curiosity. I’ve always been explorative by nature, drawn to understand how things work and why people behave the way they do. This evolved into a work style rooted in systematic thinking, responsibility, and experimentation. Think of it as a map, always gets me somewhere interesting.
 
 ### What's now
 
-For the past 3.5 years I've worked with Brahma FI, designing a programmable account app that combines DeFi and execution automation. Currently exploring personal projects, participating in hackathons with friends, and writing a PhD thesis in philosophy.
+For the past 3.5 years I've worked with Brahma FI, designing a programmable account app that combines DeFi and execution automation. Currently exploring a few pet projects, jumping into hackathons with my friends, and writing a PhD thesis in philosophy – a mix that keeps both my analytical and creative sides alive.
 
 ### Footer CTA (About page)
 
