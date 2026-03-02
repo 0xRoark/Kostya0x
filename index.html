@@ -74,8 +74,8 @@
   function ri(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
   function rchar() { return CHARS[ri(0, CHARS.length - 1)]; }
 
-  const SCRAMBLE_FRAMES = 20; // 2s at 100ms/frame
-  const RESOLVE_INTERVAL = 100; // ms per resolve frame
+  const SCRAMBLE_FRAMES = 20; // 1s at 50ms/frame
+  const RESOLVE_INTERVAL = 50; // ms per resolve frame
   const LOCK_EVERY = 3;         // lock one letter every N resolve frames
   const HOLD_MS = 1800;
 
@@ -101,7 +101,7 @@
       resolveFrame = 0;
       setTimeout(resolveTick, RESOLVE_INTERVAL);
     } else {
-      setTimeout(scrambleTick, 100);
+      setTimeout(scrambleTick, 50);
     }
   }
 
