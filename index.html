@@ -40,22 +40,12 @@
 
     <!-- Hero -->
     <section class="hero">
-      <h1 class="hero-heading">Product Designer for [crypto]</h1>
+      <h1 class="hero-heading">Product Designer for [<span id="crypto-scramble">crypto</span>]</h1>
       <div class="hero-body">
-        <p>Helping protocols and startups turn complex mechanics into intuitive user experiences. I blend pixels, words and growth hacks to make magic internet money exciting.</p>
-        <p>Love cracking complex problems, competition, and weekend pet-project builds with frens. Sophisticated crypto intern since 2020.</p>
+        <p>Helping protocols and startups turn complex mechanics into intuitive user experiences. Blend pixels, words and growth hacks to make magic internet money exciting. Love cracking complex problems. Sophisticated crypto intern since 2020.</p>
       </div>
 
-      <div class="contact-row">
-        <div class="contact-links">
-          <a href="mailto:constantine.suspitsyn@gmail.com">Send email</a>
-          <a href="https://t.me/roa_0x" target="_blank" rel="noopener">Quick chat&hellip;</a>
-        </div>
-        <div class="social-links">
-          <a href="https://linkedin.com/in/kostya-suspitsyn/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://x.com/roark_0x" target="_blank" rel="noopener">X</a>
-        </div>
-      </div>
+      <p class="contact-prose">Drop me an <a href="mailto:constantine.suspitsyn@gmail.com">email</a> or start a <a href="https://t.me/roa_0x" target="_blank" rel="noopener">quick chat</a> — and follow along on <a href="https://linkedin.com/in/kostya-suspitsyn/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/roark_0x" target="_blank" rel="noopener">X</a>.</p>
     </section>
 
     <!-- Project Snippets -->
@@ -65,10 +55,78 @@
           <source src="assets/images/bg-video.mp4" type="video/mp4">
         </video>
       </div>
-      <p class="snippets-label">Unsorted project snippets from the past few years. See more on the <a href="craft.html">Craft page</a>.</p>
+      <p class="snippets-label">Unsorted project snippets. See more on the <a href="craft.html">Craft page</a>.</p>
     </section>
 
   </div><!-- /.page-wrap -->
 
+  <footer class="site-footer">
+    <p class="img-caption">v3.6 today, might be else tomorrow. Redesigned whenever the last version stops feeling true.</p>
+  </footer>
+
+
+<script>
+(function () {
+  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*~+=?-';
+  const TARGET = 'crypto';
+  const el = document.getElementById('crypto-scramble');
+
+  function ri(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+  function rchar() { return CHARS[ri(0, CHARS.length - 1)]; }
+
+  const SCRAMBLE_FRAMES = 20; // 2s at 100ms/frame
+  const RESOLVE_INTERVAL = 100; // ms per resolve frame
+  const LOCK_EVERY = 3;         // lock one letter every N resolve frames
+  const HOLD_MS = 1800;
+
+  let phase = 'scramble';
+  let frameCount = 0;
+  let locked = [];              // locked[i] = true when TARGET[i] is revealed
+  let resolveFrame = 0;
+
+  function buildText() {
+    return TARGET.split('').map((ch, i) =>
+      locked[i] ? ch : `<span style="color:#F75600">${rchar()}</span>`
+    ).join('');
+  }
+
+  function scrambleTick() {
+    if (phase !== 'scramble') return;
+    el.textContent = TARGET.split('').map(() => rchar()).join('');
+    frameCount++;
+    if (frameCount >= SCRAMBLE_FRAMES) {
+      frameCount = 0;
+      phase = 'resolving';
+      locked = new Array(TARGET.length).fill(false);
+      resolveFrame = 0;
+      setTimeout(resolveTick, RESOLVE_INTERVAL);
+    } else {
+      setTimeout(scrambleTick, 100);
+    }
+  }
+
+  function resolveTick() {
+    resolveFrame++;
+
+    // Every LOCK_EVERY frames, lock a random unrevealed letter
+    if (resolveFrame % LOCK_EVERY === 0) {
+      const open = locked.reduce((acc, v, i) => { if (!v) acc.push(i); return acc; }, []);
+      if (open.length) locked[open[ri(0, open.length - 1)]] = true;
+    }
+
+    el.innerHTML = buildText();
+
+    if (locked.every(Boolean)) {
+      el.textContent = TARGET;
+      phase = 'hold';
+      setTimeout(() => { phase = 'scramble'; scrambleTick(); }, HOLD_MS);
+      return;
+    }
+    setTimeout(resolveTick, RESOLVE_INTERVAL);
+  }
+
+  scrambleTick();
+})();
+</script>
 </body>
 </html>
