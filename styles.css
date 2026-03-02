@@ -20,8 +20,8 @@ img { display: block; max-width: 100%; height: auto; }
   --text-muted:    #666;
   --text-dim:      #999;
   --border:        #e5e5e5;
-  --link:          #F75600;
-  --link-hover:    #F75600;
+  --link:          #FF6817;
+  --link-hover:    #FF6817;
   --font-mono:     'Geist Mono', 'Courier New', monospace;
   --font-sans:     'Geist', Arial, sans-serif;
   --content-width: 720px;
@@ -57,7 +57,12 @@ a {
   font-weight: 500;
   transition: color 0.15s ease;
 }
-a:hover { color: var(--link-hover); text-decoration: underline; }
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 20%;
+  text-underline-offset: 25%;
+}
 
 /* — Layout — */
 .page-wrap {
@@ -95,7 +100,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   color: var(--text);
   text-decoration: none;
 }
-.nav-links a:hover { color: var(--link); text-decoration: underline; }
+.nav-links a:hover { color: var(--link); text-decoration: underline; text-decoration-thickness: 20%; text-underline-offset: 25%; }
 .nav-links a.active { color: var(--link); }
 
 /* — Hero — */
@@ -131,6 +136,18 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   font-size: 14px;
   line-height: 1.75;
   color: var(--text);
+}
+
+/* — Italic term — */
+.term {
+  font-style: italic;
+  background: #E9E9E9;
+}
+
+.term-accent {
+  font-style: italic;
+  color: #F75600;
+  background: #FFE9DE;
 }
 
 /* — Section divider — */
