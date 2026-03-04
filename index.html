@@ -45,7 +45,7 @@
         <p>Helping protocols and startups turn complex mechanics into intuitive user experiences. Blend pixels, words and growth hacks to make magic internet money exciting. Cracking complexity with <a href="/about#constraints">curiosity</a>. Sophisticated crypto intern since 2020.</p>
       </div>
 
-      <p class="contact-prose">Drop me an <a href="mailto:constantine.suspitsyn@gmail.com">email</a> or start a <a href="https://t.me/roa_0x" target="_blank" rel="noopener">quick chat</a> — and follow along on <a href="https://linkedin.com/in/kostya-suspitsyn/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/roark_0x" target="_blank" rel="noopener">X</a>.</p>
+      <p class="contact-prose">Drop me an <a href="mailto:constantine.suspitsyn@gmail.com">email</a> or start a <a href="https://t.me/roa_0x" target="_blank" rel="noopener">quick chat</a> — and follow along on <a href="https://linkedin.com/in/kostya-suspitsyn/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://x.com/roark_0x" target="_blank" rel="noopener">x.com</a>.</p>
     </section>
 
     <!-- Project Snippets -->
@@ -74,8 +74,8 @@
   function ri(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
   function rchar() { return CHARS[ri(0, CHARS.length - 1)]; }
 
-  const SCRAMBLE_FRAMES = 20; // 1s at 50ms/frame
-  const RESOLVE_INTERVAL = 50; // ms per resolve frame
+  const SCRAMBLE_FRAMES = 20; // 1.4s at 70ms/frame
+  const RESOLVE_INTERVAL = 70; // ms per resolve frame
   const LOCK_EVERY = 3;         // lock one letter every N resolve frames
   const HOLD_MS = 1800;
 
@@ -101,7 +101,7 @@
       resolveFrame = 0;
       setTimeout(resolveTick, RESOLVE_INTERVAL);
     } else {
-      setTimeout(scrambleTick, 50);
+      setTimeout(scrambleTick, 70);
     }
   }
 

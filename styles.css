@@ -141,11 +141,13 @@ a:hover {
 /* — Italic term — */
 .term {
   font-style: italic;
+  font-weight: 500;
   background: #E9E9E9;
 }
 
 .term-accent {
   font-style: italic;
+  font-weight: 500;
   color: #F75600;
   background: #FFE9DE;
 }
@@ -201,9 +203,8 @@ a:hover {
 
 .page-desc {
   font-size: 14px;
-  line-height: 1.75;
-  color: var(--text-muted);
-  max-width: 560px;
+  line-height: 1.85;
+  color: var(--text);
 }
 
 /* — Project sections — */
@@ -226,9 +227,8 @@ a:hover {
 
 .project-desc {
   font-size: 14px;
-  line-height: 1.75;
-  color: var(--text-muted);
-  max-width: 560px;
+  line-height: 1.85;
+  color: var(--text);
 }
 
 /* — Image layouts — */
