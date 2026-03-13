@@ -33,6 +33,15 @@ img { display: block; max-width: 100%; height: auto; }
   --gap-xl:        64px;
   --gap-2xl:       112px;
   --radius:        6px;
+
+  /* Component tokens */
+  --term-bg:            #E9E9E9;
+  --term-accent-color:  #F75600;
+  --term-accent-bg:     #FFE9DE;
+  --cta-bg:             #FAFAFA;
+  --cta-border:         #E7E7E7;
+  --cta-heading-color:  #000;
+  --cta-desc-color:     #858585;
 }
 
 /* — Base — */
@@ -41,6 +50,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg);
   color: var(--text);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 body {
@@ -142,14 +152,14 @@ a:hover {
 .term {
   font-style: italic;
   font-weight: 500;
-  background: #E9E9E9;
+  background: var(--term-bg);
 }
 
 .term-accent {
   font-style: italic;
   font-weight: 500;
-  color: #F75600;
-  background: #FFE9DE;
+  color: var(--term-accent-color);
+  background: var(--term-accent-bg);
 }
 
 /* — Section divider — */
@@ -322,23 +332,24 @@ a:hover {
 /* — CTA Footer — */
 .cta {
   padding: 32px;
-  background: #FAFAFA;
-  border: 1px solid #E7E7E7;
+  background: var(--cta-bg);
+  border: 1px solid var(--cta-border);
   margin-bottom: var(--gap-2xl);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .cta-heading {
   font-family: var(--font-mono);
   font-size: 18px;
   font-weight: 500;
-  color: #000;
+  color: var(--cta-heading-color);
   margin-bottom: 8px;
 }
 
 .cta-desc {
   font-size: 14px;
   line-height: 1.75;
-  color: #858585;
+  color: var(--cta-desc-color);
   max-width: 480px;
   margin-bottom: 24px;
 }
@@ -363,7 +374,199 @@ a:hover {
   font-size: 12px;
 }
 
-/* — Responsive — */
+/* ——— Themes ——— */
+
+[data-theme="grey"] {
+  --bg:                 #D0D0D0;
+  --text:               #111111;
+  --text-muted:         #484848;
+  --text-dim:           #787878;
+  --border:             #B8B8B8;
+  --term-bg:            #C0C0C0;
+  --cta-bg:             #C6C6C6;
+  --cta-border:         #B0B0B0;
+  --cta-heading-color:  #111111;
+  --cta-desc-color:     #585858;
+}
+
+[data-theme="dark"] {
+  --bg:                 #161616;
+  --text:               #F0F0F0;
+  --text-muted:         #909090;
+  --text-dim:           #5C5C5C;
+  --border:             #303030;
+  --link:               #FF6817;
+  --link-hover:         #FF6817;
+  --term-bg:            #282828;
+  --term-accent-bg:     #2C1506;
+  --cta-bg:             #1E1E1E;
+  --cta-border:         #303030;
+  --cta-heading-color:  #F0F0F0;
+  --cta-desc-color:     #909090;
+}
+
+[data-theme="retro"] {
+  --bg:                 #F2EBD0;
+  --text:               #28200F;
+  --text-muted:         #7A6849;
+  --text-dim:           #AA9070;
+  --border:             #DDD0B0;
+  --link:               #C07830;
+  --link-hover:         #C07830;
+  --term-bg:            #E5DCC0;
+  --term-accent-color:  #C07830;
+  --term-accent-bg:     #F0E0C0;
+  --cta-bg:             #EDE5CC;
+  --cta-border:         #D5C8A5;
+  --cta-heading-color:  #28200F;
+  --cta-desc-color:     #7A6849;
+}
+
+[data-theme="matrix"] {
+  --bg:                 #060D09;
+  --text:               #E0F5E8;
+  --text-muted:         #6EA882;
+  --text-dim:           #3A5C48;
+  --border:             #0E2016;
+  --link:               #39FF6A;
+  --link-hover:         #39FF6A;
+  --term-bg:            #0C1E12;
+  --term-accent-color:  #39FF6A;
+  --term-accent-bg:     #081510;
+  --cta-bg:             #091410;
+  --cta-border:         #0E2016;
+  --cta-heading-color:  #E0F5E8;
+  --cta-desc-color:     #6EA882;
+}
+
+[data-theme="purple"] {
+  --bg:                 #0C0814;
+  --text:               #EDE5FF;
+  --text-muted:         #A090C8;
+  --text-dim:           #6858A8;
+  --border:             #221638;
+  --link:               #C478F8;
+  --link-hover:         #C478F8;
+  --term-bg:            #1C1432;
+  --term-accent-color:  #C478F8;
+  --term-accent-bg:     #1C1030;
+  --cta-bg:             #120E20;
+  --cta-border:         #221638;
+  --cta-heading-color:  #EDE5FF;
+  --cta-desc-color:     #A090C8;
+}
+
+/* ——— Theme Picker ——— */
+
+.theme-picker {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.theme-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  opacity: 0.55;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.theme-btn:hover {
+  opacity: 1;
+  color: var(--link);
+}
+
+.theme-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 5px;
+  min-width: 160px;
+  z-index: 100;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.theme-dropdown.open {
+  display: block;
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 7px 9px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-align: left;
+  border-radius: 4px;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+
+.theme-option:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+.theme-option.active {
+  color: var(--link);
+}
+
+.theme-shortcut {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px 5px;
+  margin-top: 3px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  user-select: none;
+  white-space: nowrap;
+}
+
+kbd {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 1px 5px 2px;
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  background: var(--bg);
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.s-light      { background: conic-gradient(#FF6817 0deg 180deg, #ffffff 180deg); }
+.s-grey       { background: conic-gradient(#FF6817 0deg 180deg, #D0D0D0 180deg); }
+.s-dark       { background: conic-gradient(#FF6817 0deg 180deg, #1A1A1A 180deg); }
+.s-retro      { background: conic-gradient(#C07830 0deg 180deg, #F2EBD0 180deg); }
+.s-matrix     { background: conic-gradient(#39FF6A 0deg 180deg, #060D09 180deg); }
+.s-purple     { background: conic-gradient(#C478F8 0deg 180deg, #0C0814 180deg); }
+
+/* ——— Responsive ——— */
 
 /* Tablet: 810px–1439px */
 @media (min-width: 810px) and (max-width: 1439px) {

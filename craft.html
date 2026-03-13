@@ -22,6 +22,9 @@
   <meta name="twitter:image" content="assets/images/og-image.png">
 
   <link rel="stylesheet" href="styles.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t&&t!=='light')document.documentElement.setAttribute('data-theme',t);})();
+  </script>
 </head>
 <body>
 
@@ -33,6 +36,23 @@
       <div class="nav-links">
         <a href="/craft" class="active">Craft</a>
         <a href="/about">About</a>
+        <div class="theme-picker">
+          <button class="theme-btn" id="theme-btn" aria-label="Change theme" title="Change theme">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M7 1.5 A5.5 5.5 0 0 1 7 12.5 Z" fill="currentColor"/>
+            </svg>
+          </button>
+          <div class="theme-dropdown" id="theme-dropdown">
+            <button class="theme-option" data-theme="light"><span class="swatch s-light"></span>Light</button>
+            <button class="theme-option" data-theme="grey"><span class="swatch s-grey"></span>Grey</button>
+            <button class="theme-option" data-theme="dark"><span class="swatch s-dark"></span>Dark</button>
+            <button class="theme-option" data-theme="retro"><span class="swatch s-retro"></span>Retro</button>
+            <button class="theme-option" data-theme="matrix"><span class="swatch s-matrix"></span>Matrix</button>
+            <button class="theme-option" data-theme="purple"><span class="swatch s-purple"></span>Purple</button>
+            <div class="theme-shortcut"><kbd>C</kbd> to change theme</div>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -199,5 +219,6 @@
     <p class="img-caption">v3.6 today, might be else tomorrow. Redesigned whenever the last version stops feeling true.</p>
   </footer>
 
+<script src="theme.js"></script>
 </body>
 </html>
