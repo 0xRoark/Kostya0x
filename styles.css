@@ -595,6 +595,11 @@ kbd {
   :root { --content-width: 680px; }
 }
 
+/* Narrow: force crypto wrap to new line */
+@media (max-width: 399px) {
+  .crypto-wrap { display: block; }
+}
+
 /* Mobile: <810px */
 @media (max-width: 809px) {
   :root {
