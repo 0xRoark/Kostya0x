@@ -569,6 +569,24 @@ kbd {
 .s-retro      { background: conic-gradient(#C07830 0deg 180deg, #F2EBD0 180deg); }
 .s-matrix     { background: conic-gradient(#39FF6A 0deg 180deg, #060D09 180deg); }
 .s-purple     { background: conic-gradient(#C478F8 0deg 180deg, #0C0814 180deg); }
+.s-amber      { background: conic-gradient(#FFAA00 0deg 180deg, #12100D 180deg); }
+
+[data-theme="amber"] {
+  --bg:                 #111008;
+  --text:               #FFF5DC;
+  --text-muted:         #C0A060;
+  --text-dim:           #6E5830;
+  --border:             #2E2410;
+  --link:               #FFB800;
+  --link-hover:         #FFB800;
+  --term-bg:            #1E1A0C;
+  --term-accent-color:  #FFB800;
+  --term-accent-bg:     #261E08;
+  --cta-bg:             #181408;
+  --cta-border:         #2E2410;
+  --cta-heading-color:  #FFF5DC;
+  --cta-desc-color:     #C0A060;
+}
 
 /* ——— Responsive ——— */
 

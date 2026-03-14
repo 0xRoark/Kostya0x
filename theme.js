@@ -48,7 +48,7 @@
       e.stopPropagation();
     });
 
-    var CYCLE = ['light', 'grey', 'dark', 'retro', 'matrix', 'purple'];
+    var CYCLE = ['light', 'grey', 'dark', 'retro', 'matrix', 'purple', 'amber'];
     document.addEventListener('keydown', function (e) {
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
       if (e.code === 'KeyC' && !e.ctrlKey && !e.metaKey && !e.altKey) {
