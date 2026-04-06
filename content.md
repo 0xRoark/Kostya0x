@@ -116,7 +116,7 @@ For me, the core constraint has always been curiosity. I’ve always been explor
 
 ### What's now
 
-For the past 3.5 years I've worked with Brahma FI, designing a programmable account app that combines DeFi and execution automation. Currently exploring a few pet projects, jumping into hackathons with my friends, and writing a PhD thesis in philosophy – a mix that keeps both my analytical and creative sides alive.
+For the past 4 years I've been working at Brahma FI, designing a programmable account app that combines DeFi and execution automation. Recently Brahma has been acquired by Polymarket. Currently exploring a few pet projects, jumping into hackathons with my friends, and writing a PhD thesis in philosophy – a mix that keeps both my analytical and creative sides alive.
 
 ### Footer CTA (About page)
 
