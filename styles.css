@@ -428,43 +428,6 @@ a:hover {
   --cta-desc-color:     #7A6849;
 }
 
-[data-theme="matrix"] {
-  --bg:                 #060D09;
-  --text:               #E0F5E8;
-  --text-muted:         #6EA882;
-  --text-dim:           #3A5C48;
-  --border:             #0E2016;
-  --link:               #39FF6A;
-  --link-hover:         #39FF6A;
-  --link-underline:     #1E4030;
-  --link-underline-hover: #4EA870;
-  --term-bg:            #0C1E12;
-  --term-accent-color:  #39FF6A;
-  --term-accent-bg:     #081510;
-  --cta-bg:             #091410;
-  --cta-border:         #0E2016;
-  --cta-heading-color:  #E0F5E8;
-  --cta-desc-color:     #6EA882;
-}
-
-[data-theme="purple"] {
-  --bg:                 #0C0814;
-  --text:               #EDE5FF;
-  --text-muted:         #A090C8;
-  --text-dim:           #6858A8;
-  --border:             #221638;
-  --link:               #C478F8;
-  --link-hover:         #C478F8;
-  --link-underline:     #3A2860;
-  --link-underline-hover: #8060C0;
-  --term-bg:            #1C1432;
-  --term-accent-color:  #C478F8;
-  --term-accent-bg:     #1C1030;
-  --cta-bg:             #120E20;
-  --cta-border:         #221638;
-  --cta-heading-color:  #EDE5FF;
-  --cta-desc-color:     #A090C8;
-}
 
 /* ——— Theme Picker ——— */
 
@@ -490,6 +453,20 @@ a:hover {
 .theme-btn:hover {
   opacity: 1;
   color: var(--link);
+}
+
+.theme-key {
+  font-family: inherit;
+  font-size: 10px;
+  line-height: 1;
+  padding: 2px 4px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-muted);
+  background: none;
+  margin-left: 5px;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .theme-dropdown {
@@ -573,8 +550,6 @@ kbd {
 .s-grey       { background: conic-gradient(#000000 0deg 180deg, #D0D0D0 180deg); }
 .s-dark       { background: conic-gradient(#FF6817 0deg 180deg, #1A1A1A 180deg); }
 .s-retro      { background: conic-gradient(#C07830 0deg 180deg, #F2EBD0 180deg); }
-.s-matrix     { background: conic-gradient(#39FF6A 0deg 180deg, #060D09 180deg); }
-.s-purple     { background: conic-gradient(#C478F8 0deg 180deg, #0C0814 180deg); }
 .s-amber      { background: conic-gradient(#FFAA00 0deg 180deg, #12100D 180deg); }
 
 [data-theme="amber"] {
