@@ -153,14 +153,14 @@ a:hover {
 
 /* — Italic term — */
 .term {
-  font-style: italic;
-  font-weight: 500;
+  font-style: normal;
+  font-weight: 450;
   background: var(--term-bg);
 }
 
 .term-accent {
-  font-style: italic;
-  font-weight: 500;
+  font-style: normal;
+  font-weight: 600;
   color: var(--term-accent-color);
   background: var(--term-accent-bg);
 }
@@ -369,9 +369,29 @@ a:hover {
 /* — Site footer — */
 .site-footer {
   max-width: var(--content-width);
-  margin: 0 auto 12px;
+  margin: 0 auto;
   padding: var(--gap-md) var(--page-pad) 0;
   font-size: 12px;
+}
+
+/* Full-bleed pixel-dither band along the bottom edge */
+.footer-dither {
+  display: block;
+  height: 60px;
+  margin-top: var(--gap-md);
+  margin-bottom: 0;
+  /* break out of the content column to span the full viewport */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  color: var(--text-dim);
+  background-color: currentColor;
+  opacity: 0.36;
+  -webkit-mask: url("assets/footer-dither.svg") repeat-x bottom / 192px 60px;
+          mask: url("assets/footer-dither.svg") repeat-x bottom / 192px 60px;
 }
 
 /* ——— Themes ——— */
