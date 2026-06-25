@@ -29,7 +29,7 @@ Helping protocols and startups turn complex mechanics into intuitive user experi
 ### Contact / Links
 
 - **Send email** → mailto:constantine.suspitsyn@gmail.com
-- **Quick chat…** → https://t.me/roa_0x
+- **Quick chat…** → https://t.me/kostya0x
 - **LinkedIn** → (LinkedIn profile)
 - **X** → https://x.com/roark_0x
 
@@ -95,7 +95,7 @@ Pre-FTX era project (2021–early 2022). Mobile terminal allowing users to conne
 Working on an interesting idea? I'm all ears. Reach out and let's see if we can build something great together.
 
 - **Send email** → mailto:constantine.suspitsyn@gmail.com
-- **Quick chat** → https://t.me/roa_0x
+- **Quick chat** → https://t.me/kostya0x
 
 ---
 
@@ -125,7 +125,7 @@ For the past 4 years I've been working at Brahma FI, designing a programmable ac
 Invites collaboration.
 
 - **Send email** → mailto:constantine.suspitsyn@gmail.com
-- **Quick chat** → https://t.me/roa_0x
+- **Quick chat** → https://t.me/kostya0x
 
 ---
 
@@ -134,6 +134,6 @@ Invites collaboration.
 | Platform | Link |
 |----------|------|
 | Email | constantine.suspitsyn@gmail.com |
-| Telegram | https://t.me/roa_0x |
+| Telegram | https://t.me/kostya0x |
 | X (Twitter) | https://x.com/roark_0x |
 | LinkedIn | (LinkedIn profile URL) |

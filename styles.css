@@ -119,7 +119,7 @@ a:hover {
 
 /* — Hero — */
 .hero {
-  padding: var(--gap-xl) 0 var(--gap-xl);
+  padding: var(--gap-xl) 0 var(--gap-md);
 }
 
 .hero-heading {
@@ -150,6 +150,29 @@ a:hover {
   font-size: 14px;
   line-height: 1.75;
   color: var(--text);
+}
+
+/* — Social icons — */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 52px;
+}
+
+.social-icons a {
+  display: inline-flex;
+}
+
+.social-icons img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.05);
 }
 
 /* — Italic term — */
@@ -359,12 +382,19 @@ a:hover {
 
 .cta-links {
   display: flex;
-  gap: var(--gap-md);
+  gap: 12px;
   flex-wrap: wrap;
 }
 
-.cta-links a {
-  font-size: 13px;
+.cta-links img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cta-links a:hover img {
+  transform: scale(1.05);
 }
 
 /* — Site footer — */
