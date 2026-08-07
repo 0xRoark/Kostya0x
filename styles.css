@@ -266,6 +266,10 @@ a:hover {
   color: var(--text);
 }
 
+.project-desc + .project-desc {
+  margin-top: var(--gap-md);
+}
+
 /* — Image layouts — */
 .img-single {
   margin-bottom: 4px;
