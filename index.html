@@ -32,25 +32,29 @@
 
   <div class="page-wrap">
 
-    <!-- Nav -->
-    <nav class="nav nav--home">
-      <a href="/" class="nav-name">Kostya Suspitsyn</a>
-      <div class="nav-links">
-        <a href="/about">About</a>
-        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme" title="Toggle theme">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/>
-            <path d="M7 1.5 A5.5 5.5 0 0 1 7 12.5 Z" fill="currentColor"/>
-          </svg>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Hero -->
+    <!-- Hero (reversed, full first viewport) -->
     <section class="hero">
-      <h1 class="hero-heading">Product Designer for <span class="crypto-wrap">[<span id="crypto-scramble">crypto</span>]</span></h1>
-      <div class="hero-body">
-        <p>Building things on the internet. Design partner bridging craft and engineering, making and managing. Led end-to-end design across trading, onboarding, and transaction flows at <a href="https://brahma.fi/" target="_blank" rel="noopener">Brahma</a> (acq. by <a href="https://polymarket.com/" target="_blank" rel="noopener">Polymarket</a>).</p>
+      <!-- Nav -->
+      <nav class="nav nav--home">
+        <a href="/" class="nav-name">Kostya Suspitsyn</a>
+        <div class="nav-links">
+          <a href="/about">About</a>
+          <button class="theme-btn" id="theme-btn" aria-label="Toggle theme" title="Toggle theme">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M7 1.5 A5.5 5.5 0 0 1 7 12.5 Z" fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <div class="hero-inner">
+        <div class="hero-content">
+          <span class="hero-avatar">
+            <img src="assets/images/cA982uJG_400x400.jpg" alt="Kostya Suspitsyn" width="44" height="44">
+          </span>
+          <p class="hero-copy"><span class="hero-strong">Product designer</span> bridging craft and engineering, making and managing. Building products in <span class="hero-strong">crypto</span>.</p>
+        </div>
       </div>
     </section>
 
@@ -68,13 +72,12 @@
       <div class="project-header">
         <div class="project-meta">
           <div class="project-meta-text">
-            <h2 class="project-title">Spotter</h2>
+            <h2 class="project-title"><a href="https://spotterapp.xyz" target="_blank" rel="noopener">Spotter</a></h2>
             <p class="project-tagline">Hyperliquid tracker</p>
           </div>
           <span class="project-year">2026</span>
         </div>
         <p class="project-desc">Spotter is a native macOS menu bar app that keeps your Hyperliquid and Trade.xyz PnL in the corner of your eye — one glance, always current, no chart to overthink. Conviction in the corner of your eye.</p>
-        <p class="project-desc"><a href="https://spotterapp.xyz" target="_blank" rel="noopener">[Try Spotter]</a></p>
       </div>
 
       <!-- Full width -->
@@ -281,70 +284,6 @@
   <footer class="site-footer">
   </footer>
 
-
-<script>
-(function () {
-  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*~+=?-';
-  const TARGET = 'crypto';
-  const el = document.getElementById('crypto-scramble');
-
-  function ri(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
-  function rchar() { return CHARS[ri(0, CHARS.length - 1)]; }
-
-  const SCRAMBLE_FRAMES = 20; // 1.4s at 70ms/frame
-  const RESOLVE_INTERVAL = 70; // ms per resolve frame
-  const LOCK_EVERY = 3;         // lock one letter every N resolve frames
-  const HOLD_MS = 1800;
-
-  let phase = 'scramble';
-  let frameCount = 0;
-  let locked = [];              // locked[i] = true when TARGET[i] is revealed
-  let resolveFrame = 0;
-
-  function buildText() {
-    return TARGET.split('').map((ch, i) =>
-      locked[i] ? ch : `<span style="color:var(--link)">${rchar()}</span>`
-    ).join('');
-  }
-
-  function scrambleTick() {
-    if (phase !== 'scramble') return;
-    el.textContent = TARGET.split('').map(() => rchar()).join('');
-    frameCount++;
-    if (frameCount >= SCRAMBLE_FRAMES) {
-      frameCount = 0;
-      phase = 'resolving';
-      locked = new Array(TARGET.length).fill(false);
-      resolveFrame = 0;
-      setTimeout(resolveTick, RESOLVE_INTERVAL);
-    } else {
-      setTimeout(scrambleTick, 70);
-    }
-  }
-
-  function resolveTick() {
-    resolveFrame++;
-
-    // Every LOCK_EVERY frames, lock a random unrevealed letter
-    if (resolveFrame % LOCK_EVERY === 0) {
-      const open = locked.reduce((acc, v, i) => { if (!v) acc.push(i); return acc; }, []);
-      if (open.length) locked[open[ri(0, open.length - 1)]] = true;
-    }
-
-    el.innerHTML = buildText();
-
-    if (locked.every(Boolean)) {
-      el.textContent = TARGET;
-      phase = 'hold';
-      setTimeout(() => { phase = 'scramble'; scrambleTick(); }, HOLD_MS);
-      return;
-    }
-    setTimeout(resolveTick, RESOLVE_INTERVAL);
-  }
-
-  scrambleTick();
-})();
-</script>
 <script src="theme.js"></script>
 </body>
 </html>
