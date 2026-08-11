@@ -18,6 +18,7 @@ img { display: block; max-width: 100%; height: auto; }
 :root {
   --bg:            #fff;
   --text:          #000;
+  --text-body:     var(--text);
   --text-muted:    #666;
   --text-dim:      #999;
   --border:        #e5e5e5;
@@ -458,11 +459,21 @@ a:hover {
   font-size: 12px;
 }
 
+/* — Body copy color — softer than headings in dark mode to reduce eye strain — */
+.hero-body,
+.contact-prose,
+.page-desc,
+.project-desc,
+.about-block-text {
+  color: var(--text-body);
+}
+
 /* ——— Themes ——— */
 
 [data-theme="dark"] {
   --bg:                 #121212;
   --text:               #F0F0F0;
+  --text-body:          #AAAAAA;
   --text-muted:         #909090;
   --text-dim:           #5C5C5C;
   --border:             #303030;
