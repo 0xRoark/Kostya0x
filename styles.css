@@ -95,9 +95,9 @@ a:hover {
   padding: 0 var(--page-pad);
 }
 
-/* About page: nav stays global width, body returns to the old narrow column */
+/* About page: nav stays global width, body returns to the narrow column */
 .about-body {
-  max-width: 720px;
+  max-width: 524px;
   margin: 0 auto;
 }
 
@@ -433,7 +433,7 @@ a:hover {
 }
 
 .about-block-text p + p {
-  margin-top: var(--gap-md);
+  margin-top: var(--gap-sm);
 }
 
 /* — CTA Footer — */
