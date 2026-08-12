@@ -97,7 +97,7 @@ a:hover {
 
 /* About page: nav stays global width, body returns to the narrow column */
 .about-body {
-  max-width: 524px;
+  max-width: 480px;
   margin: 0 auto;
 }
 
