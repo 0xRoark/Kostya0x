@@ -199,9 +199,10 @@ a:hover {
 }
 
 .hero-copy {
-  max-width: 480px;
+  max-width: 540px;
   margin: 0;
   text-align: left;
+  text-wrap: pretty;
   font-family: var(--font-sans);
   font-size: 20px;
   line-height: 1.5;
