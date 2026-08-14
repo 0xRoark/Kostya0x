@@ -28,6 +28,7 @@ img { display: block; max-width: 100%; height: auto; }
   --link-underline-hover: #888;
   --font-sans:     'Geist', Arial, sans-serif;
   --content-width: 1000px;
+  --text-width:    512px;
   --page-pad:      24px;
   --gap-xs:        8px;
   --gap-sm:        12px;
@@ -98,7 +99,7 @@ a:hover {
 
 /* About page: nav stays global width, body returns to the narrow column */
 .about-body {
-  max-width: 480px;
+  max-width: var(--text-width);
   margin: 0 auto;
 }
 
@@ -172,6 +173,12 @@ a:hover {
   flex-direction: column;
 }
 
+/* Menu shares the narrow text column (both pages) */
+.nav--home {
+  width: min(var(--text-width), 100%);
+  margin-inline: auto;
+}
+
 .hero-inner {
   padding: var(--gap-xl) 0 72px;
 }
@@ -180,6 +187,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: var(--text-width);
+  margin-inline: auto;
 }
 
 .hero-avatar {
@@ -199,12 +208,12 @@ a:hover {
 }
 
 .hero-copy {
-  max-width: 540px;
+  max-width: var(--text-width);
   margin: 0;
   text-align: left;
   text-wrap: pretty;
   font-family: var(--font-sans);
-  font-size: 20px;
+  font-size: 19px;
   line-height: 1.5;
   color: var(--text-muted);
 }
@@ -353,6 +362,8 @@ a:hover {
 
 .project-header {
   margin-bottom: var(--gap-lg);
+  width: min(var(--text-width), 100%);
+  margin-inline: auto;
 }
 
 .project-meta {
@@ -408,8 +419,8 @@ a:hover {
   font-size: 14px;
   line-height: 1.85;
   color: var(--text);
-  /* Match the width of one square grid tile (50% minus half the 4px grid gap) */
-  max-width: calc(50% - 2px);
+  max-width: var(--text-width);
+  margin-inline: auto;
 }
 
 .project-desc + .project-desc {
@@ -420,9 +431,10 @@ a:hover {
 .project-desc-grid {
   order: 1; /* render below the project's images */
   margin-top: var(--gap-lg);
+  margin-inline: auto;
+  max-width: var(--text-width);
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 4px;
+  grid-template-columns: 1fr;
   row-gap: var(--gap-md);
 }
 
@@ -642,7 +654,6 @@ a:hover {
   .hero-inner { padding: var(--gap-xl) 0 var(--gap-xl); }
 
   .project-desc { max-width: none; }
-  .project-desc-grid { grid-template-columns: 1fr; }
 
   .img-grid-2,
   .img-grid-3 { grid-template-columns: 1fr; }
