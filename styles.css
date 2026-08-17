@@ -535,6 +535,8 @@ a:hover {
 
 /* — CTA Footer — */
 .cta {
+  max-width: var(--text-width);
+  margin-inline: auto;
   padding: 32px;
   background: var(--cta-bg);
   border: 1px solid var(--cta-border);
