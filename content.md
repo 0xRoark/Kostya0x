@@ -28,7 +28,6 @@ Helping protocols and startups turn complex mechanics into intuitive user experi
 
 ### Contact / Links
 
-- **Quick chat…** → https://t.me/kostya0x
 - **LinkedIn** → (LinkedIn profile)
 - **X** → https://x.com/roark_0x
 
@@ -93,7 +92,6 @@ Pre-FTX era project (2021–early 2022). Mobile terminal allowing users to conne
 
 Working on an interesting idea? I'm all ears. Reach out and let's see if we can build something great together.
 
-- **Quick chat** → https://t.me/kostya0x
 
 ---
 
@@ -122,7 +120,6 @@ For the past 4 years I've been working at Brahma FI, designing a programmable ac
 
 Invites collaboration.
 
-- **Quick chat** → https://t.me/kostya0x
 
 ---
 
@@ -130,6 +127,5 @@ Invites collaboration.
 
 | Platform | Link |
 |----------|------|
-| Telegram | https://t.me/kostya0x |
 | X (Twitter) | https://x.com/roark_0x |
 | LinkedIn | (LinkedIn profile URL) |
